@@ -1,0 +1,1 @@
+-r-xr-xr-x 1 stan stan 40 Jun  1  2022 testShell00
