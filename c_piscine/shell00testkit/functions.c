@@ -160,7 +160,7 @@ char** ft_split(char* str, char* charset)
 	return (res);
 }
 
-int dir_is_empty(void) {
+int cwd_is_empty(void) {
 	int ret = 0;
 
 	system("ls>result.txt");

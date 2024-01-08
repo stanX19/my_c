@@ -10,7 +10,7 @@ char* read_file(char* path);
 
 void print_diff(char* command, char* expected, char* result);
 
-int dir_is_empty(void);
+int cwd_is_empty(void);
 
 int test00(void)
 {
@@ -18,7 +18,7 @@ int test00(void)
 	char *expected;
 	char *result;
 
-	if (dir_is_empty())
+	if (cwd_is_empty())
 		return 2;
 	if (!exists("z"))
 		return 3;

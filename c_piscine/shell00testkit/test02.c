@@ -15,7 +15,7 @@ int exists(char* path);
 
 int find(char* str, char c);
 
-int dir_is_empty(void);
+int cwd_is_empty(void);
 
 int test02(void)
 {
@@ -37,7 +37,7 @@ int test02(void)
 
 	command = "tar -xf exo2.tar -C ex02 && ls -l > result.txt";
 
-	if (dir_is_empty())
+	if (cwd_is_empty())
 		return 2;
 	if (!exists("exo2.tar"))
 		return 3;

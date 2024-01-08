@@ -15,7 +15,7 @@ int exists(char* path);
 
 int find(char* str, char c);
 
-int dir_is_empty(void);
+int cwd_is_empty(void);
 
 int test01(void)
 {
@@ -28,7 +28,7 @@ int test01(void)
 
 	expected = "-r--r-xr-x 1 XX XX 40 Jun 1 23:42 testShell00\n";
 	command = "tar -xf testShell00.tar && ls -l testShell00 > result.txt";
-	if (dir_is_empty())
+	if (cwd_is_empty())
 		return 2;
 	if (!exists("testShell00.tar"))
 		return 3;
