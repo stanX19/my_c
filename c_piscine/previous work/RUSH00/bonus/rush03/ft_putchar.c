@@ -1,26 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/14 12:36:00 by shatan            #+#    #+#             */
+/*   Updated: 2024/01/14 12:36:10 by shatan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	ft_putchar(int i, int j, int x, int y)
+void	ft_putchar(char c)
 {
-	if (i == 1)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(const char *str)
+{
+	while (*str != 0)
 	{
-		if ((j == 1) || (j == y))
-			write (1, "A", 1);
-		else
-			write (1, "B", 1);
-	}
-	else if (i == x)
-	{
-		if ((j == 1) || (j == y))
-			write (1, "C", 1);
-		else
-			write (1, "B", 1);
-	}
-	else
-	{
-		if ((j == 1) || (j == y))
-			write (1, "B", 1);
-		else
-			write (1, " ", 1);
+		ft_putchar(*str);
+		str++;
 	}
 }

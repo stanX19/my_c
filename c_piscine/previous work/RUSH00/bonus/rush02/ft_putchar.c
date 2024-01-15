@@ -3,33 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssi <ssi@student.42kl.edu.my>              +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/10 14:09:52 by ssi               #+#    #+#             */
-/*   Updated: 2022/04/10 17:47:50 by stan             ###   ########.fr       */
+/*   Created: 2024/01/14 12:36:00 by shatan            #+#    #+#             */
+/*   Updated: 2024/01/14 12:36:10 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(int i, int j, int x, int y)
+void	ft_putchar(char c)
 {
-	if (j == 1)
+	write(1, &c, 1);
+}
+
+void	ft_putstr(const char *str)
+{
+	while (*str != 0)
 	{
-		if ((i == 1) || (i == x))
-			write(1, "A", 1);
-		else
-			write(1, "B", 1);
+		ft_putchar(*str);
+		str++;
 	}
-	else if (j == y)
-	{
-		if ((i == 1) || (i == x))
-			write(1, "C", 1);
-		else
-			write(1, "B", 1);
-	}
-	else if (i == 1 || i == x)
-		write(1, "B", 1);
-	else
-		write(1, " ", 1);
 }

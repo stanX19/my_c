@@ -3,36 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stan <stan@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: shatan <shatan@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/09 17:27:03 by stan              #+#    #+#             */
-/*   Updated: 2022/04/10 11:52:15 by stan             ###   ########.fr       */
+/*   Created: 2024/01/14 12:30:30 by shatan            #+#    #+#             */
+/*   Updated: 2024/01/14 14:26:53 by shatan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#define TOP "o-o"
+#define MID "| |"
+#define BOT "o-o"
 
-void	ft_putchar(int i, int j, int x, int y);
+void	ft_putchar(char c);
 
-void	rush00(int x, int y)
+void	print_line(char start, char middle, char end, int width)
 {
 	int	i;
-	int	j;
 
-	if (x < 1 || y < 1)
+	ft_putchar(start);
+	i = 1;
+	while (i <= width - 2)
 	{
-		write(1, "sike we are prepared for this", 37);
+		ft_putchar(middle);
+		i++;
+	}
+	if (width > 1)
+		ft_putchar(end);
+	ft_putchar('\n');
+}
+
+void	rush(int x, int y)
+{
+	int	i;
+
+	if (x <= 0 || y <= 0)
 		return ;
-	}
-	j = 1;
-	i = 2;
-	write(1, "o", 1);
-	while (j <= y)
+	print_line(TOP[0], TOP[1], TOP[2], x);
+	i = 1;
+	while (i <= y - 2)
 	{
-		while (i <= x)
-			ft_putchar(i++, j, x, y);
-		write(1, "\n", 1);
-		i = 1;
-		j++;
+		print_line(MID[0], MID[1], MID[2], x);
+		i++;
 	}
+	if (y > 1)
+		print_line(BOT[0], BOT[1], BOT[2], x);
 }
