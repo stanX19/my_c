@@ -1,0 +1,3 @@
+[submodule "projects/projects/libft"]
+	path = projects/projects/libft
+	url = https://github.com/stanX19/libft.git
