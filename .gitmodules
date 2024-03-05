@@ -1,6 +1,7 @@
 [submodule "projects/libft"]
 	path = projects/libft
 	url = git@github.com:stanX19/libft.git
+	branch = main
 [submodule "projects/get_next_line"]
 	path = projects/get_next_line
 	url = git@github.com:stanX19/get_next_line.c.git
